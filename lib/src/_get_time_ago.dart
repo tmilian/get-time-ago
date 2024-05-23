@@ -91,7 +91,7 @@ class GetTimeAgo {
     final _locale = locale ?? _defaultLocale;
     final _message = _messageMap[_locale] ?? EnglishMessages();
     final _pattern = pattern ?? "dd MMM, yyyy hh:mm aa";
-    final date = DateFormat(_pattern).format(dateTime);
+    final date = DateFormat(_pattern, _locale).format(dateTime);
     var _currentClock = DateTime.now();
     var elapsed =
         (_currentClock.millisecondsSinceEpoch - dateTime.millisecondsSinceEpoch)
